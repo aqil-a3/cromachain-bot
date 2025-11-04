@@ -33,8 +33,8 @@ Choose a platform or link below to explore more about the Croma ecosystem:`;
         Markup.button.url("Discord", "https://discord.com/invite/SWj8TWfu9k"),
       ],
       [
-        Markup.button.url("Play Store", "https://play.google.com/store/apps/details?id=com.trixwallet"),
-        Markup.button.url("App Store", "https://apps.apple.com/app/trix-wallet/idXXXXXXXXX"), // ganti jika sudah ada link asli
+        Markup.button.callback("📱 Play Store (Coming Soon)", "coming_soon"),
+        Markup.button.callback("🍎 App Store (Coming Soon)", "coming_soon"),
       ],
     ])
   );
