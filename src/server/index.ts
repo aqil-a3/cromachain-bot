@@ -17,12 +17,6 @@ export function startServer() {
       console.log(`🌐 Webhook registered at ${WEBHOOK_URL}`);
     });
   } else {
-    const app = express();
-
-    app.get("/", (req, res) => {
-      res.json({ message: "Hello from Express on Vercel!" });
-    });
-
     console.log(
       "🛰️ Production mode detected – Express not started (handled by Vercel)."
     );
