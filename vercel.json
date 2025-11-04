@@ -1,17 +1,15 @@
 {
   "version": 2,
-  "buildCommand": "tsc",
-  "outputDirectory": "dist",
   "builds": [
     {
-      "src": "dist/api/**/*.js",
+      "src": "src/api/**/*.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "dist/api/$1.js"
+      "dest": "src/api/$1"
     }
   ]
 }
