@@ -1,8 +1,8 @@
 import { Telegraf } from "telegraf";
-import { startCommand } from "./commands/start";
-import { helpCommand } from "./commands/help";
-import { env } from "../config/env";
-import { connectCommand } from "./commands/connect";
+import { startCommand } from "./commands/start.js";
+import { helpCommand } from "./commands/help.js";
+import { env } from "../config/env.js";
+import { connectCommand } from "./commands/connect.js";
 
 export const bot = new Telegraf(env.BOT_TOKEN);
 

@@ -1,5 +1,5 @@
 import { Context, Markup } from "telegraf";
-import { escapeMarkdownV2 } from "../../helper/escapeMarkdownV2";
+import { escapeMarkdownV2 } from "../../helper/escapeMarkdownV2.js";
 import path from "path";
 
 export async function startCommand(ctx: Context) {

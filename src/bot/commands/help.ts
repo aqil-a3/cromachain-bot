@@ -1,5 +1,5 @@
 import { Context, Markup } from "telegraf";
-import { escapeMarkdownV2 } from "../../helper/escapeMarkdownV2";
+import { escapeMarkdownV2 } from "../../helper/escapeMarkdownV2.js";
 
 export function helpCommand(ctx: Context) {
   const message = `🧭 *Croma Bot Help Menu*
