@@ -2,23 +2,15 @@ import express from "express";
 import { bot } from "../bot";
 import { env } from "../config/env";
 
-export function startServer() {
-  // hanya jalankan Express kalau sedang development
-  if (process.env.NODE_ENV !== "production") {
-    const app = express();
-    const WEBHOOK_PATH = `/bot${env.BOT_TOKEN}`;
-    const WEBHOOK_URL = `${env.NGROK_URL}${WEBHOOK_PATH}`;
+const app = express();
 
-    app.use(bot.webhookCallback(WEBHOOK_PATH));
-    bot.telegram.setWebhook(WEBHOOK_URL);
+const WEBHOOK_PATH = `/bot${env.BOT_TOKEN}`;
 
-    app.listen(env.PORT, () => {
-      console.log(`✅ Dev server running at http://localhost:${env.PORT}`);
-      console.log(`🌐 Webhook registered at ${WEBHOOK_URL}`);
-    });
-  } else {
-    console.log(
-      "🛰️ Production mode detected – Express not started (handled by Vercel)."
-    );
-  }
-}
+app.use(express.json());
+app.use(bot.webhookCallback(WEBHOOK_PATH));
+
+app.get("/", (_, res) => {
+  res.json({ message: "Croma Bot is running on Vercel 🚀" });
+});
+
+export default app;
