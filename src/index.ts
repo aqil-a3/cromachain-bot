@@ -1,6 +1,6 @@
 import express from "express";
-import { bot } from "./bot";
-import { env } from "./config/env";
+import { bot } from "./bot/index.js";
+import { env } from "./config/env.js";
 
 const app = express();
 app.use(express.json());

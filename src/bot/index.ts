@@ -1,7 +1,6 @@
 import { Telegraf } from "telegraf";
 import { startCommand } from "./commands/start";
 import { helpCommand } from "./commands/help";
-import { echoCommand } from "./commands/echo";
 import { env } from "../config/env";
 import { connectCommand } from "./commands/connect";
 
