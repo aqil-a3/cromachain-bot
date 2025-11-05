@@ -5,11 +5,10 @@ import { env } from "./config/env.js";
 const app = express();
 app.use(express.json());
 
-if (process.env.NODE_ENV === "development") {
-  app.listen(3000, () => console.log("Dev Server is Running"));
-}
+// app.listen(3000, () => console.log("Dev Server is Running"));
 
 const WEBHOOK_PATH = `/bot${env.BOT_TOKEN}`;
+// const WEBHOOK_PATH = `/bot${process.env.ENV_BOTH_TOKEN}`;
 app.use(WEBHOOK_PATH, bot.webhookCallback(WEBHOOK_PATH));
 
 app.get("/", (_req, res) =>
